@@ -1,0 +1,120 @@
+/* Prepare */
+
+body
+{
+    background : url("../images/back.jpg") repeat-x;
+    margin : 0;
+    padding : 0;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif, "宋体", "黑体", "微软雅黑";
+    color : #333;
+    text-align : center;
+    cursor : default;
+    background : #eee;
+    font-size : 12px;
+}
+a
+{
+    outline : 0px;
+}
+.container
+{
+    width : 920px;
+    margin : 5px auto;
+    position : relative;
+    text-align : left;
+    background : #fff;
+    border : solid 1px #ddd;
+    padding : 20px;
+    border-radius : 10px;
+}
+.header
+{
+    font-size : 16px;
+    color : #834;
+    font-weight : bold;
+    margin-bottom : 5px;
+}
+.footer
+{
+    margin-top : 5px;
+    text-align : center;
+    color : #666;
+}
+.hall .roomlist
+{
+    background : #f7f7f7;
+    padding : 5px;
+    margin-top : 5px;
+}
+.hall .roomlist .roomlist_item
+{
+    color : #444;
+    border : solid 1px #f7f7f7;
+    padding : 2px 5px;
+}
+.hall .roomlist .hover
+{
+    background : #eee;
+    border : 1px solid #ddd;
+}
+.hall .roomlist .selected
+{
+    background : #e7e7e7;
+    border : 1px solid #ddd;
+}
+.hall .roomlist .roomlist_item span
+{
+    color : #933;
+    padding : 0 3px;
+}
+.room
+{
+    display : none;
+}
+.room .playerlist
+{
+    background : #f7f7f7;
+    padding : 5px;
+    margin-top : 5px;
+}
+.room .playerlist .playerlist_item
+{
+    color : #444;
+    border : solid 1px #f7f7f7;
+    padding : 2px 5px;
+}
+.room .playerlist .playerlist_item span.status
+{
+    color : #933;
+    padding : 0 3px;
+}
+.room .playerlist .playerlist_item span.ip
+{
+    color : #aaa;
+    padding : 0 3px;
+}
+.game
+{
+    display : none;
+}
+.gamecontainer
+{
+    width : 920px;
+    height : 600px;
+}
+.gamecontainer .playerinfo
+{
+    position : absolute;
+    right : 20px;
+    top : 20px;
+}
+
+/* Final */
+
+.clear
+{
+    clear : both;
+    float : none;
+    height : 1px;
+    overflow : hidden;
+}

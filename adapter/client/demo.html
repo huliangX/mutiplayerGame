@@ -1,0 +1,47 @@
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <title>realtime combat</title>
+       
+  <!--script src="easeljsmin.js"></script-->   
+  <script type="text/javascript" src="./scripts/keyStatus.js"></script>
+  <script type="text/javascript" src="./scripts/utility.js"></script>
+
+   <script type="text/javascript" src="./scripts/Box2dWebmin.js"></script>
+   <script type="text/javascript" src="./scripts/Sprites.js"></script>
+   <script type="text/javascript" src="./scripts/socket.io.min.js"></script>   
+
+  </head>
+   <body >
+      <canvas id="canvas" width="1000" height="650" style="position: absolute; left: 0; top: 0; z-index: 1;">
+      </canvas>
+
+      <form>
+      <input id="playerName" style="z-index:2;position:absolute;left:900px;top:80px;width:100px;height:20px" value="" placeholder="姓名?">
+      <br />     
+      <input id="playerPosition" style="z-index:2;position:absolute;left:900px;top:100px;width:100px;height:20px" value="" placeholder="几号位?">
+      </form>
+
+
+      <button id="Start" onclick="initGame();" style="z-index:2;position:absolute;left:930px;top:130px;width:70px;height:60px">Combat Ready</button>
+
+      <!--button id="Reset" onclick="reset();" style="z-index:2;position:absolute;left:930px;top:130px;width:70px;height:60px">Reset</button-->
+     <button id="jump" style="z-index:2;position:absolute;left:930px;top:400px;width:50px;height:30px" >JUMP</button>
+     <button id="left" style="z-index:2;position:absolute;left:880px;top:450px;width:50px;height:30px" >LEFT</button>
+     <button id="right" style="z-index:2;position:absolute;left:940px;top:450px;width:50px;height:30px" >RIGHT</button>
+
+     <button id="createHole" style="z-index:2;position:absolute;left:930px;top:300px;width:70px;height:60px" >Create Hole</button>
+    
+     <button id="createGate" style="z-index:2;position:absolute;left:930px;top:200px;width:70px;height:60px" >Create Gate</button>
+         
+   
+    <script type="text/javascript">
+
+  //window.onload=initGame;  //mainEntrance;
+  //可以先写个函数来加载场景 和 图片
+  
+</script>
+ 
+</body>
+</html>
