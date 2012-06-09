@@ -7,6 +7,8 @@ var Network = require('./network'),
     Room = require('./room'),
     Player = require('./player'),
     Config = require('./config');
+    Physic = require('./physic')
+
 
 var usersWS = [];  //未加入room 的player
 
@@ -90,6 +92,12 @@ Network.on('connection', function (socket) {
                     console.log("[new player]",data.name);
                     var player = new Player(socket, data);
                 }
+                else
+                {
+                     console.log("[wait player visit again]",data.name);
+                    socket.emit('error', "you have registered");
+                    return ;
+                }
 
 
     //这个id 作为player的唯一标示符号
@@ -124,6 +132,9 @@ Network.on('connection', function (socket) {
                     usersWS.splice(0,2);
                     console.log("[wait player numer]",usersWS.length);                
                     console.log("GameStart");
+
+                    Physic.CreatePhysicWorld(p1, p2);
+
                     p1.socket.emit('GameStart', {me:p1.isMain});
                     p2.socket.emit('GameStart', {me:p2.isMain});
                  
@@ -144,33 +155,28 @@ Network.on('connection', function (socket) {
                     var room = player.room;
                     for(var i=0;i<room.players.length;i++)
                     {
+                        
                            if(room.players[i].id ==player.id) 
                             {
-                                console.log("this is msg from id:",room.players[i].id)
-                               
+                            //console.log("this is msg from id:",room.players[i].id) 
                             }
                             else
                             {
                             room.players[i].socket.emit('sync', data);
-                            console.log("send to id:",room.players[i].id)
+                            //console.log("send to id:",room.players[i].id)
                             }
+                            
+                            //room.players[i].socket.emit('sync', data);
                     }
-/*
-                    if(player.isMain ==1 )
-                        room.players[1].socket.emit('sync', data);
-                    else
-                        room.players[0].socket.emit('sync', data);                        
-*/              
+             
                 }//if
                else
                {
                 socket.emit('error',"no session");
                } 
 
-
             }); //get
 
-            
             // socket.broadcast.emit('sync',data);
            //  socket.broadcast.json.send({ a: 'message' });
         }); //socket.on
